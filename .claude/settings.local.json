@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv \"lib/flutter_native_splash.yaml\" \"flutter_native_splash.yaml\")"
+    ],
+    "additionalDirectories": [
+      "d:\\Programming\\flutter\\session6\\islamy_app\\lib"
+    ]
+  }
+}
