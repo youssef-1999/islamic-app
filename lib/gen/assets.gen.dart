@@ -17,6 +17,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/Vector.svg
   String get vector => 'assets/images/Vector.svg';
 
+  /// File path: assets/images/bg_hadeth.png
+  AssetGenImage get bgHadeth =>
+      const AssetGenImage('assets/images/bg_hadeth.png');
+
   /// File path: assets/images/ic_hadeth.svg
   String get icHadeth => 'assets/images/ic_hadeth.svg';
 
@@ -65,6 +69,7 @@ class $AssetsImagesGen {
   /// List of all assets
   List<dynamic> get values => [
     vector,
+    bgHadeth,
     icHadeth,
     icRadio,
     icSebha,
