@@ -5,4 +5,9 @@ class AppAssets {
   static const String intro3 = 'assets/images/intro_3.png';
   static const String intro4 = 'assets/images/intro_4.png';
   static const String intro5 = 'assets/images/intro_5.png';
+  static const String hadeth = 'assets/images/ic_hadeth.svg';
+  static const String radio = 'assets/images/radio.svg';
+  static const String sebha = 'assets/images/ic_sebha.svg';
+  static const String time = 'assets/images/ic_time.svg';
+  static const String vector = 'assets/images/vector.svg';
 }
