@@ -20,7 +20,7 @@ class IntroScreen extends StatelessWidget {
       child: Align(
         alignment: Alignment.topCenter,
         child: Padding(
-          padding: const EdgeInsets.only(top: 100),
+          padding: const EdgeInsets.only(top: 200),
           child: Image.asset(image, height: 450),
         ),
       ),
@@ -54,7 +54,7 @@ class IntroScreen extends StatelessWidget {
           child: SafeArea(
             child: Padding(
               padding: const EdgeInsets.only(top: 24),
-              child: Image.asset(AppAssets.logo, height: 60),
+              child: Image.asset(AppAssets.logo,width: 100,height: 100,fit: BoxFit.cover,),
             ),
           ),
         ),
