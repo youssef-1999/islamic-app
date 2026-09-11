@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islamy_app/gen/assets.gen.dart';
 import 'package:islamy_app/models/sura_model.dart';
+import 'package:islamy_app/tabs/quran_tab/sura_screen_details.dart';
 import 'package:islamy_app/widgets/sub_title.dart';
 
 class SurasListView extends StatelessWidget {
   final List<SuraModel> suras;
-  const SurasListView({super.key, required this.suras});
+  const SurasListView({super.key, required this.suras, required this.searchText});
+  final String searchText;
 
   @override
   Widget build(BuildContext context) {
+    final query = searchText.toLowerCase();
+    List <SuraModel> suras = this.suras.where((sura) =>
+        sura.suraNameAr.toLowerCase().contains(query) ||
+        sura.suraNameEn.toLowerCase().contains(query)).toList();
     return Column(
 children: [
   Padding(padding:
@@ -36,8 +42,14 @@ children: [
                   itemBuilder: (context, index) => SizedBox(
                     width: 290,
                     child: Card(
+
 color: Colors.transparent,
-                      child: Padding(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, SuraScreenDetails.routeName,arguments: suras[index]);
+                        },
+                        child: Padding(
+
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -70,7 +82,7 @@ color: Colors.transparent,
                         ],
                       ),
 ),
-                      
+                      ),
                     ),
                   ),
                 ),

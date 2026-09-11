@@ -16,6 +16,8 @@ class QuranTab extends StatefulWidget {
 }
 
 class _QuranTabState extends State<QuranTab> {
+  String searchText = '';
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -28,10 +30,11 @@ class _QuranTabState extends State<QuranTab> {
             children: [
               Image.asset(Assets.images.islami.path,width: 200,height: 200,fit: BoxFit.cover,),
               TextField(
+                onChanged: (value) => setState(() => searchText = value),
                 decoration: InputDecoration(
                   hintText: 'Search Here',
                   hintStyle: const TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),
-                  fillColor: AppColors.blackColor.withValues(alpha: 0.7),
+                  fillColor: Colors.white.withValues(alpha: 0.7),
                   filled: true,
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -57,7 +60,7 @@ class _QuranTabState extends State<QuranTab> {
               SizedBox(height: 20,),
               MostRecentlyView(),
                SizedBox(height: 20,),
-              SurasListView(suras: SurasList.suras),
+              SurasListView(suras: SurasList.suras,searchText: searchText),
             ],
           ),
           ),

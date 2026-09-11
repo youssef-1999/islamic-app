@@ -10,6 +10,7 @@ import 'package:islamy_app/tabs/time_tab/time_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+  static const String routeName = '/home_screen';
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
