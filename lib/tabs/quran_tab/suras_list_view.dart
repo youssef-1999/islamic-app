@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islamy_app/gen/assets.gen.dart';
+import 'package:islamy_app/models/sura_model.dart';
 import 'package:islamy_app/widgets/sub_title.dart';
 
 class SurasListView extends StatelessWidget {
-  const SurasListView({super.key});
+  final List<SuraModel> suras;
+  const SurasListView({super.key, required this.suras});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ children: [
                   scrollDirection: Axis.vertical,
 
                   physics: const BouncingScrollPhysics(),
-                  itemCount: 8,
+                  itemCount: suras.length,
                   separatorBuilder: (context, index) => Divider(
                     color: Colors.white,
                     indent: 60,
@@ -50,21 +52,21 @@ color: Colors.transparent,
                                   children: [
                                     SvgPicture.asset(Assets.images.suraNumber,width: 52,height: 52,fit: BoxFit.cover,),
                                     Text(
-                                      '${index + 1}',
+                                      suras[index].id.toString(),
                                       style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),
                                     ),
                                   ],
                                 ),
                                 Column(
                                   children: [
-                                    Text('Al-Fatiha',style: TextStyle(color: Colors.white,fontSize: 24,fontWeight: FontWeight.bold),),
-                                    SubTitle(text: '7 Verses  '),
+                                    Text(suras[index].suraNameEn,style: TextStyle(color: Colors.white,fontSize: 24,fontWeight: FontWeight.bold),),
+                                    SubTitle(text: "${suras[index].ayasCount} verses"),
                                   ],
-                                  
+
                                 ),
                               ],
                             ),
-                            Text('الفاتحة',style: TextStyle(color: Colors.white,fontSize: 24,fontWeight: FontWeight.bold),),
+                            Text(suras[index].suraNameAr,style: TextStyle(color: Colors.white,fontSize: 24,fontWeight: FontWeight.bold),),
                         ],
                       ),
 ),

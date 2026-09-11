@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islamy_app/common/app_colors.dart';
+import 'package:islamy_app/data/suras_names.dart';
 import 'package:islamy_app/gen/assets.gen.dart';
 import 'package:islamy_app/tabs/quran_tab/most_recently_view.dart';
 import 'package:islamy_app/tabs/quran_tab/suras_list_view.dart';
@@ -56,7 +57,7 @@ class _QuranTabState extends State<QuranTab> {
               SizedBox(height: 20,),
               MostRecentlyView(),
                SizedBox(height: 20,),
-              SurasListView(),
+              SurasListView(suras: SurasList.suras),
             ],
           ),
           ),
