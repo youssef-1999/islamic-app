@@ -7,8 +7,9 @@ import 'package:islamy_app/widgets/sub_title.dart';
 
 class SurasListView extends StatelessWidget {
   final List<SuraModel> suras;
-  const SurasListView({super.key, required this.suras, required this.searchText});
+  const SurasListView({super.key, required this.suras, required this.searchText, required this.addToMostRecent});
   final String searchText;
+  final void Function(int index) addToMostRecent;
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +47,7 @@ children: [
 color: Colors.transparent,
                       child: InkWell(
                         onTap: () {
+                          addToMostRecent(index);
                           Navigator.pushNamed(context, SuraScreenDetails.routeName,arguments: suras[index]);
                         },
                         child: Padding(

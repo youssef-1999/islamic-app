@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:islamy_app/common/app_colors.dart';
 import 'package:islamy_app/gen/assets.gen.dart';
+import 'package:islamy_app/data/suras_names.dart';
+import 'package:islamy_app/models/sura_model.dart';
 
 class MostRecentlyView extends StatelessWidget {
-  const MostRecentlyView({super.key});
+  final List<int> mostRecent;
+  const MostRecentlyView({super.key, this.mostRecent = const []});
 
   @override
   Widget build(BuildContext context) {
+
     return Column(
       children: [
         Padding(
@@ -29,8 +33,12 @@ class MostRecentlyView extends StatelessWidget {
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
-            itemCount: 3,
-            itemBuilder: (context, index) => SizedBox(
+            itemCount: mostRecent.length,
+            itemBuilder: (context, index) {
+              int suraId = mostRecent[index];
+              SuraModel sura = SurasList.suras[suraId];
+              return SizedBox(
+                
               width: 290,
               child: Card(
                 color: AppColors.goldColor,
@@ -43,7 +51,7 @@ class MostRecentlyView extends StatelessWidget {
                       Column(
                         children: [
                           Text(
-                            'Al-Anbiya',
+                            sura.suraNameEn,
                             style: TextStyle(
                               color: AppColors.blackColor,
                               fontSize: 24,
@@ -51,7 +59,7 @@ class MostRecentlyView extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            'الانبياء',
+                            sura.suraNameAr,
                             style: TextStyle(
                               color: AppColors.blackColor,
                               fontSize: 24,
@@ -59,7 +67,7 @@ class MostRecentlyView extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            '7 Verses  ',
+                            sura.ayasCount.toString(),
                             style: TextStyle(
                               color: AppColors.blackColor,
                               fontSize: 14,
@@ -78,7 +86,8 @@ class MostRecentlyView extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
+            );
+            },
           ),
         ),
       ],
