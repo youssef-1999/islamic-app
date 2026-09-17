@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islamy_app/gen/assets.gen.dart';
 import 'package:islamy_app/widgets/buildBg.dart';
 
@@ -44,9 +45,7 @@ class _SebhaTabState extends State<SebhaTab> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10),
-              
-              SizedBox(height: 20),
+              SizedBox(height: 30),
               GestureDetector(
                 onTap: () {
                   setState(() {
@@ -59,43 +58,60 @@ class _SebhaTabState extends State<SebhaTab> {
                   });
                 },
                 child: SizedBox(
-                  width: 200,
-                  height: 200,
+                  width: 250,
+                  height: 260,
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
-                      AnimatedRotation(
-                        turns: totalTaps / 10,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeOut,
+                      
+                       Align(
+                        alignment: Alignment.topCenter,
+
+                        
                         child: Image.asset(
-                          Assets.images.sebha.path,
-                          width: 400,
-                          height: 400,
-                          fit: BoxFit.contain,
+                          Assets.images.sebhaHeader.path,
+                          width: 90,
+                          height: 54,
                         ),
                       ),
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child: AnimatedRotation(
+                          turns: totalTaps / 10,
+                          duration: const Duration(milliseconds: 100),
+                          curve: Curves.easeOut,
+                          child: SvgPicture.asset(
+                            Assets.images.sebhaBody,
+                            width: 220,
+                            height: 220,
+                          ),
+                        ),
+                      ),
+                     
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          
-                      Text(
-                sebha[sebhaIndex],
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-                      Text(
-                        '$counter',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                        ),
+                          Text(
+                            sebha[sebhaIndex],
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              
+                              fontWeight: FontWeight.bold,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(height: 8),
+                          Text(
+                            '$counter',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
-                        ])
                     ],
                   ),
                 ),

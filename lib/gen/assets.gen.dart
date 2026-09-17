@@ -287,12 +287,16 @@ class $AssetsImagesGen {
   AssetGenImage get quranTabBg =>
       const AssetGenImage('assets/images/quran_tab_bg.png');
 
-  /// File path: assets/images/sebha.png
-  AssetGenImage get sebha => const AssetGenImage('assets/images/sebha.png');
-
   /// File path: assets/images/sebha_bg.png
   AssetGenImage get sebhaBg =>
       const AssetGenImage('assets/images/sebha_bg.png');
+
+  /// File path: assets/images/sebha_body.svg
+  String get sebhaBody => 'assets/images/sebha_body.svg';
+
+  /// File path: assets/images/sebha_header.png
+  AssetGenImage get sebhaHeader =>
+      const AssetGenImage('assets/images/sebha_header.png');
 
   /// File path: assets/images/sura_details_screen.png
   AssetGenImage get suraDetailsScreen =>
@@ -325,8 +329,9 @@ class $AssetsImagesGen {
     mosqueBg,
     quranSura,
     quranTabBg,
-    sebha,
     sebhaBg,
+    sebhaBody,
+    sebhaHeader,
     suraDetailsScreen,
     suraNumber,
     waveBg,
