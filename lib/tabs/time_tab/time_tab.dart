@@ -27,31 +27,39 @@ class _TimeTabState extends State<TimeTab> {
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 20),
                   padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+                  
                   decoration: BoxDecoration(
-                    color: Color(0xff856B3F).withValues(alpha: 0.8),
-                    borderRadius: BorderRadius.circular(16),
+                   borderRadius: BorderRadius.circular(20),
+                   image: DecorationImage(
+                     image: AssetImage(Assets.images.bgPrayerTime.path),
+                     fit: BoxFit.cover,
+                     
+                   )
                   ),
                   child: Column(
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(
                             children: [
                               Text('16 Jul,',style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
                               Text('2024',style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
+                              SizedBox(height: 35,),
                             ],
                           ),
                           Column(
                              children: [
-                              Text('Pray Time,',style: TextStyle(color: AppColors.goldColor,fontSize: 18,fontWeight: FontWeight.bold),),
-                              Text('Tuesday',style: TextStyle(color: AppColors.goldColor,fontSize: 18,fontWeight: FontWeight.bold),),
+                              Text('Pray Time,',style: TextStyle(color: AppColors.blackColor,fontSize: 18,fontWeight: FontWeight.bold),),
+                              Text('Tuesday',style: TextStyle(color: AppColors.blackColor,fontSize: 18,fontWeight: FontWeight.bold),),
                             ],
                           ),
                           Column(
                               children: [
                               Text('09 Muh,',style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
                               Text('1446',style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
+                              SizedBox(height: 35,),
+
                             ],
                           ),
                         ],
@@ -61,7 +69,7 @@ class _TimeTabState extends State<TimeTab> {
                       Stack(
                         alignment: Alignment.center,
                         children: [
-                          Center(child: Text('Next Pray -02:32 ',style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),)),
+                          Center(child: Text('Next Pray -02:32 ',style: TextStyle(color: AppColors.blackColor,fontSize: 18,fontWeight: FontWeight.bold),)),
                           Align(
                             alignment: Alignment.centerRight,
                             child: Icon(Icons.notifications_off_rounded,color: AppColors.blackColor,size: 20,fontWeight: FontWeight.bold,),

@@ -229,6 +229,10 @@ class $AssetsImagesGen {
   AssetGenImage get bgHadeth =>
       const AssetGenImage('assets/images/bg_hadeth.png');
 
+  /// File path: assets/images/bg_prayer_time.png
+  AssetGenImage get bgPrayerTime =>
+      const AssetGenImage('assets/images/bg_prayer_time.png');
+
   /// File path: assets/images/evening_azkar.png
   AssetGenImage get eveningAzkar =>
       const AssetGenImage('assets/images/evening_azkar.png');
@@ -283,6 +287,13 @@ class $AssetsImagesGen {
   AssetGenImage get quranTabBg =>
       const AssetGenImage('assets/images/quran_tab_bg.png');
 
+  /// File path: assets/images/sebha.png
+  AssetGenImage get sebha => const AssetGenImage('assets/images/sebha.png');
+
+  /// File path: assets/images/sebha_bg.png
+  AssetGenImage get sebhaBg =>
+      const AssetGenImage('assets/images/sebha_bg.png');
+
   /// File path: assets/images/sura_details_screen.png
   AssetGenImage get suraDetailsScreen =>
       const AssetGenImage('assets/images/sura_details_screen.png');
@@ -297,6 +308,7 @@ class $AssetsImagesGen {
   List<dynamic> get values => [
     vector,
     bgHadeth,
+    bgPrayerTime,
     eveningAzkar,
     icHadeth,
     icRadio,
@@ -313,6 +325,8 @@ class $AssetsImagesGen {
     mosqueBg,
     quranSura,
     quranTabBg,
+    sebha,
+    sebhaBg,
     suraDetailsScreen,
     suraNumber,
     waveBg,

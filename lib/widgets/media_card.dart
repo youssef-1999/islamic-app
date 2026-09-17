@@ -29,7 +29,7 @@ class MediaCard extends StatelessWidget {
           ),
           Positioned.fill(
             child: Container(
-              color: AppColors.goldColor.withValues(alpha: .7),
+              color: AppColors.goldColor.withValues(alpha: .35),
             ),
           ),
           Container(
